@@ -11,17 +11,17 @@
 		<div class="container-fluid h-100 pt-3">
 			<header class="titlebar">
 				<div class="drag-region">
-					<div class="window-title"></div>
-					<div class="window-controls">					
-						<div class="button min-button" id="min-button">
-							<i class="fa-solid fa-window-minimize"></i>
-						</div>
-						<div class="button close-button" id="close-button">
-							<i class="fa-solid fa-xmark"></i>
-						</div>
+				  <div class="window-title"></div>
+				  <div class="window-controls">
+					<div class="button min-button" id="min-button">
+					  <i class="fa-solid fa-window-minimize"></i>
 					</div>
+					<div class="button close-button" id="close-button">
+					  <i class="fa-solid fa-xmark"></i>
+					</div>
+				  </div>
 				</div>
-			</header>
+			  </header>
 			<div>
 				<div class="row info">
 					<div class="albumContainer">
@@ -29,29 +29,28 @@
 					</div>
 					<div class="songContainer" align="left">
 						<div class="row songTitleBackground">
-							<input type="hidden" id="songURL" value="https://open.spotify.com/track/4QRWA5UqYU1st9aO0UfxOj">
-							<div class="col-12 songName" id="songName" title="">
-								<strong id="title">Fade Away</strong> | <span class="artistName" id="artistName" title="">Logic</span>
-							</div>
+						  <input type="hidden" id="songURL" value="https://open.spotify.com/track/4QRWA5UqYU1st9aO0UfxOj">
+						  <span class="songName" id="songName" title="">Everybody</span>
+						  <input type="hidden" id="artistURL" value="https://open.spotify.com/artist/4xRYI6VqpkE3UwrDrAZL8L">
+						  <span class="artistName" id="artistName" title="">Logic</span>
 						</div>
+					  </div>							
+				</div>
+				<div class="row controls">
+					<div class="col-3" align="center">
+						<i class="fa-solid fa-shuffle shuffleInactive" id="shuffle"></i>
 					</div>
-														
+					<div class="col-3" align="center">
+						<i class="fa-solid fa-backward-step backSong" id="backSong"></i>
+					</div>
+					<div class="col-3" align="center" id="playPause">
+						<i class="fa-solid fa-pause" id="pause"></i>
+					</div>
+					<div class="col-3" align="center">
+						<i class="fa-solid fa-forward-step nextSong" id="nextSong"></i>
+					</div>
 				</div>
 				<div class="row progressContainer">
-					<div class="row controls">
-						<div class="col-3" align="center">
-							<i class="fa-solid fa-shuffle shuffleInactive" id="shuffle"></i>
-						</div>
-						<div class="col-3" align="center">
-							<i class="fa-solid fa-backward-step backSong" id="backSong"></i>
-						</div>
-						<div class="col-3" align="center" id="playPause">
-							<i class="fa-solid fa-pause" id="pause"></i>
-						</div>
-						<div class="col-3" align="center">
-							<i class="fa-solid fa-forward-step nextSong" id="nextSong"></i>
-						</div>
-					</div>
 					<div class="progress">
 						<div class="progress-bar" role="progressbar" style="width:35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>

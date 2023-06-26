@@ -334,10 +334,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 							// Set the UI colors from the album artwork
 							$('.titlebar').css('background', hexToRGBA(color.hex, 0.75));
+							$('.songContainer').css('background', hexToRGBA(color.hex, 0.75));
 							$('.dropdown-menu').css('background-color', hexToRGBA(color.hex, 0.0));
 							$('.info').css('background',shader(color.hex, -.1));
 							$('.controls').css('background', hexToRGBA(color.hex, 0.75));
 							$('.progress').css('background-color',shader(color.hex, -.6));
+
+							$('.titlebar, .songContainer, .info, .controls').addClass('feathered-container');
+							
 						});
 					});
 

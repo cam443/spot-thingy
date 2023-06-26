@@ -8444,6 +8444,10 @@ textarea.form-control-lg {
   font-weight: 900;
   font-style: normal; }
 
+body {
+  overflow: hidden;
+  /* Hide scrollbars */ }
+
 .spot-thing {
   font-family: 'Montserrat';
   font-weight: 400;
@@ -8467,8 +8471,10 @@ textarea.form-control-lg {
       grid-template-columns: auto 138px; }
       .spot-thing .titlebar .drag-region .window-controls {
         display: grid;
-        grid-template-columns: repeat(2, 36px);
-        position: fixed;
+        grid-template-columns: repeat(2, 46px);
+        position: absolute;
+        top: 0;
+        right: 0;
         height: 100%;
         -webkit-app-region: no-drag; }
         .spot-thing .titlebar .drag-region .window-controls .button {
@@ -8518,51 +8524,32 @@ textarea.form-control-lg {
     .spot-thing .info .songContainer {
       max-width: 100%;
       background: linear-gradient(-45deg, #6138f5 0%, #8753de 30%);
-      display: flex;
-      top: 25%; }
-      .spot-thing .info .songContainer .albumName {
-        font-size: 5vh;
-        color: #FFFFFF;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        max-width: 300px;
-        cursor: pointer;
-        opacity: .8;
-        text-transform: uppercase;
-        z-index: 10; }
-      .spot-thing .info .songContainer .artistName {
-        font-size: 4vh;
-        color: #FFFFFF;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        cursor: pointer;
-        z-index: 10; }
-      .spot-thing .info .songContainer .songName {
-        font-size: 5vh;
-        font-weight: 600;
-        color: #FFFFFF;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        display: flex;
-        justify-content: space-between;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 100%;
-        text-overflow: ellipsis;
-        cursor: pointer;
-        z-index: 10; }
-      .spot-thing .info .songContainer .songName:hover {
-        animation: scrolling 10s linear infinite; }
+      position: relative;
+      top: 16px; }
+      .spot-thing .info .songContainer .songTitleBackground {
+        width: 100%; }
+        .spot-thing .info .songContainer .songTitleBackground:hover {
+          animation: scrolling 10s linear infinite; }
+        .spot-thing .info .songContainer .songTitleBackground .songName {
+          font-size: 10vh;
+          font-weight: 500;
+          color: #FFFFFF;
+          white-space: nowrap;
+          overflow: visible;
+          cursor: pointer;
+          z-index: 10; }
+        .spot-thing .info .songContainer .songTitleBackground .artistName {
+          font-size: 8vh;
+          color: #FFFFFF;
+          white-space: nowrap;
+          cursor: pointer;
+          z-index: 10; }
 
 @keyframes scrolling {
   0% {
     transform: translateX(0); }
   100% {
     transform: translateX(-100%); } }
-  .spot-thing .infoAlt {
-    height: 100% !important; }
   .spot-thing .progressContainer .progress {
     position: absolute;
     bottom: 5%;
@@ -8575,31 +8562,27 @@ textarea.form-control-lg {
     margin-left: -12px;
     z-index: 10; }
   .spot-thing .controls {
-    height: 15%;
-    width: 110%;
-    font-size: 7vh;
+    background: #6138f5;
+    height: 25%;
+    width: calc(100%);
+    font-size: 12vh;
     color: #FFFFFF;
     z-index: 10;
     position: fixed;
-    bottom: 0;
-    background-color: transparent; }
+    bottom: 0; }
     .spot-thing .controls .nextSong {
-      opacity: .7;
-      z-index: 10; }
+      opacity: .7; }
       .spot-thing .controls .nextSong:hover {
         opacity: 1; }
     .spot-thing .controls .backSong {
-      opacity: .7;
-      z-index: 10; }
+      opacity: .7; }
       .spot-thing .controls .backSong:hover {
         opacity: 1; }
     .spot-thing .controls .shuffleActive {
       opacity: 1;
-      z-index: 10;
       color: #b91d47; }
     .spot-thing .controls .shuffleInactive {
       opacity: .7;
-      z-index: 10;
       color: #FFFFFF; }
       .spot-thing .controls .shuffleInactive:hover {
         opacity: 1; }
