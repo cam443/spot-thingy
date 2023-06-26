@@ -33,6 +33,18 @@ window.addEventListener('DOMContentLoaded', () => {
 	// Declare some globals
 	var spotifyApi;
 
+	function hexToRGBA(hex, alpha) {
+		var r = parseInt(hex.slice(1, 3), 16),
+			g = parseInt(hex.slice(3, 5), 16),
+			b = parseInt(hex.slice(5, 7), 16);
+	
+		if (alpha) {
+			return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+		} else {
+			return "rgb(" + r + ", " + g + ", " + b + ")";
+		}
+	}
+
 	// Check if the clientData.json already exists
 	// If found, we refresh the access token and then run the normal startIntervals
 	var pathData = 'C:\\ProgramData\\spot-thing\\clientData.json';
@@ -321,32 +333,11 @@ window.addEventListener('DOMContentLoaded', () => {
 							debug && console.log('Album Color: '+color.hex);
 
 							// Set the UI colors from the album artwork
-							$('.titlebar').css('background',shader(color.hex, -.1));
-							$('.dropdown-menu').css('background-color',shader(color.hex, -.1));
+							$('.titlebar').css('background', hexToRGBA(color.hex, 0.75));
+							$('.dropdown-menu').css('background-color', hexToRGBA(color.hex, 0.0));
 							$('.info').css('background',shader(color.hex, -.1));
-							$('.controls').css('background',shader(color.hex, -.4));
+							$('.controls').css('background', hexToRGBA(color.hex, 0.75));
 							$('.progress').css('background-color',shader(color.hex, -.6));
-
-							// Set the colors for the menu and dropdown items
-							$('.window-title').css('background',shader(color.hex, -.1));
-							$('.window-title').hover(
-								function () {
-								   $(this).css('background',shader(color.hex, -.2));
-								}, 
-								 
-								function () {
-								   $(this).css('background',shader(color.hex, -.1));
-								}
-							);
-							
-							$('.dropdown-item').hover(
-								function () {
-								   $(this).css('background',shader(color.hex, -.2));
-								}, 
-								function () {
-								   $(this).css('background',shader(color.hex, -.1));
-								}
-							);
 						});
 					});
 

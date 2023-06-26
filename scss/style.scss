@@ -3,8 +3,7 @@
   font-weight:400;
   height:100vh;
   overflow-y:hidden;
-  background-color: $background-color;
-  color: $text-color;
+  background-color:transparent;
 
   .titlebar {
     position: fixed;
@@ -12,7 +11,7 @@
     right: 0;
     height: 32px;
     width: calc(100%);
-    background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value for transparency */
 	z-index: 5;
 
     .drag-region {
@@ -105,12 +104,8 @@
     .songContainer {
       max-width:100%;
 	  background: $purple-gradient;
-	  display: inline-block;
-
-	  .songTitleBackground {
-		display: flex;
-		// rest of the properties...
-	  }
+	  display: flex;
+	  top: 25%;
       
       .albumName {
         font-size:5vh;
@@ -141,10 +136,22 @@
         color:$white;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-        overflow:hidden;
+        display: flex;
+    	justify-content: space-between;
+    	white-space: nowrap;
+    	overflow: hidden;
+    	width: 100%;
+    	text-overflow: ellipsis;
         cursor:pointer;
 		z-index: 10;
       }
+	  .songName:hover {
+		animation: scrolling 10s linear infinite;
+	}
+	@keyframes scrolling {
+		0% { transform: translateX(0); }
+		100% { transform: translateX(-100%); }
+	}
     }
   }
 
@@ -172,11 +179,13 @@
   }
 
   .controls {
-    height:30%;
+    height:15%;
+	width: 110%;
     font-size:7vh;
     color:$white;
 	z-index: 10;
-	position: relative;
+	position: fixed;
+	bottom: 0;
 	background-color: transparent;
 
     .nextSong {
