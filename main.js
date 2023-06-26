@@ -2,12 +2,16 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const ipc = require("electron").ipcMain;
+require('electron-reload')(__dirname, {
+	electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+	hardResetMethod: 'exit'
+  });
 
 function createWindow () {
   	// Create the browser window.
   	const mainWindow = new BrowserWindow({
-		width: 500,
-		height: 275,
+		width: 200,
+		height: 200,
 		resizeable: false,
 		autoHideMenuBar: true,
 		frame: false,

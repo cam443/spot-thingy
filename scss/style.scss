@@ -1,12 +1,3 @@
-$background-color: #222;
-$text-color: #f3f3f3;
-$light-purple: #b3a6cf;
-$spotifygreen: #1DB954;
-$white: #FFFFFF;
-$black: #000000;
-$purple: #660198;
-$purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
-
 .spot-thing {
   font-family:'Montserrat';
   font-weight:400;
@@ -17,9 +8,12 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
 
   .titlebar {
     position: fixed;
+	top: 0;
+    right: 0;
     height: 32px;
     width: calc(100%);
-    background: rgba(255, 122, 89, 0);
+    background-color: transparent;
+	z-index: 5;
 
     .drag-region {
       width: 100%;
@@ -31,9 +25,7 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
       .window-controls {
         display: grid;
         grid-template-columns: repeat(2, 36px);
-        position: absolute;
-        top: 0;
-        right: 0;
+        position: fixed;
         height: 100%;
         -webkit-app-region: no-drag;
 
@@ -91,10 +83,6 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
     .about {
       color: $white;
     }
-
-    .form-control {
-      padding:5px 5px 5px 5px;
-    }
   }
 
 
@@ -103,18 +91,26 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
 
     .albumContainer {
       max-width:100%;
-	  z-index: 5;
 
       .albumArt {
-        box-shadow: 0 1px 5px 0 rgba($black, .6), 0 1px 4px -1px rgba($black, .6);
-        cursor:pointer;
-        height: 100%;
 		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
       }
     }
 
     .songContainer {
       max-width:100%;
+	  background: $purple-gradient;
+	  display: inline-block;
+
+	  .songTitleBackground {
+		display: flex;
+		// rest of the properties...
+	  }
       
       .albumName {
         font-size:5vh;
@@ -130,7 +126,7 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
       }
       
       .artistName {
-        font-size: 6vh;
+        font-size: 4vh;
         color:$white;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
@@ -140,7 +136,7 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
       }
       
       .songName {
-        font-size:8vh;
+        font-size:5vh;
         font-weight:600;
         color:$white;
         -webkit-line-clamp: 2;
@@ -157,10 +153,11 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
   }
 
   .progressContainer {
-    height:5px;
 	
 
     .progress {
+		position: absolute;
+		bottom: 5%;
       height:5px;
       border-radius:0px;
       background-color: darken($purple,10%);
@@ -175,11 +172,12 @@ $purple-gradient: linear-gradient(135deg, #4b0472, #1c0733);
   }
 
   .controls {
-    background: $purple;
     height:30%;
     font-size:7vh;
     color:$white;
 	z-index: 10;
+	position: relative;
+	background-color: transparent;
 
     .nextSong {
       opacity:.7;

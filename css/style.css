@@ -1,0 +1,143 @@
+.spot-thing {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #222;
+  color: #f3f3f3; }
+  .spot-thing .titlebar {
+    position: fixed;
+    height: 32px;
+    width: calc(100%);
+    background-color: transparent;
+    z-index: 5; }
+    .spot-thing .titlebar .drag-region {
+      width: 100%;
+      height: 100%;
+      -webkit-app-region: drag;
+      display: grid;
+      grid-template-columns: auto 138px; }
+      .spot-thing .titlebar .drag-region .window-controls {
+        display: grid;
+        grid-template-columns: repeat(2, 36px);
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        -webkit-app-region: no-drag; }
+        .spot-thing .titlebar .drag-region .window-controls .button {
+          grid-row: 1 / span 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          user-select: none; }
+        .spot-thing .titlebar .drag-region .window-controls .min-button {
+          grid-column: 1; }
+          .spot-thing .titlebar .drag-region .window-controls .min-button:hover {
+            color: #FFFFFF !important; }
+          .spot-thing .titlebar .drag-region .window-controls .min-button:active {
+            color: #FFFFFF !important; }
+          .spot-thing .titlebar .drag-region .window-controls .min-button .fa-solid {
+            padding-bottom: 10px; }
+        .spot-thing .titlebar .drag-region .window-controls .close-button {
+          grid-column: 2; }
+          .spot-thing .titlebar .drag-region .window-controls .close-button:hover {
+            color: #FFFFFF !important; }
+          .spot-thing .titlebar .drag-region .window-controls .close-button:active {
+            color: #FFFFFF !important; }
+  .spot-thing .overlay {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    height: 80%;
+    width: 90%;
+    background-color: #000000;
+    border-radius: 10px;
+    z-index: 10; }
+    .spot-thing .overlay .about {
+      color: #FFFFFF; }
+    .spot-thing .overlay .form-control {
+      padding: 5px 5px 5px 5px; }
+  .spot-thing .info {
+    background: linear-gradient(135deg, #4b0472, #1c0733); }
+    .spot-thing .info .albumContainer {
+      max-width: 100%; }
+      .spot-thing .info .albumContainer .albumArt {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%; }
+    .spot-thing .info .songContainer {
+      max-width: 100%;
+      background: linear-gradient(135deg, #4b0472, #1c0733); }
+      .spot-thing .info .songContainer .albumName {
+        font-size: 5vh;
+        color: #FFFFFF;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-width: 300px;
+        cursor: pointer;
+        opacity: .8;
+        text-transform: uppercase;
+        z-index: 10; }
+      .spot-thing .info .songContainer .artistName {
+        font-size: 6vh;
+        color: #FFFFFF;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 10; }
+      .spot-thing .info .songContainer .songName {
+        font-size: 8vh;
+        font-weight: 600;
+        color: #FFFFFF;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 10; }
+  .spot-thing .infoAlt {
+    height: 100% !important; }
+  .spot-thing .progressContainer .progress {
+    position: absolute;
+    bottom: 5%;
+    height: 5px;
+    border-radius: 0px;
+    background-color: #440165;
+    z-index: 10; }
+  .spot-thing .progressContainer .progress-bar {
+    background-color: #FFFFFF;
+    margin-left: -12px;
+    z-index: 10; }
+  .spot-thing .controls {
+    height: 30%;
+    font-size: 7vh;
+    color: #FFFFFF;
+    z-index: 10;
+    position: relative; }
+    .spot-thing .controls .nextSong {
+      opacity: .7;
+      z-index: 10; }
+      .spot-thing .controls .nextSong:hover {
+        opacity: 1; }
+    .spot-thing .controls .backSong {
+      opacity: .7;
+      z-index: 10; }
+      .spot-thing .controls .backSong:hover {
+        opacity: 1; }
+    .spot-thing .controls .shuffleActive {
+      opacity: 1;
+      z-index: 10;
+      color: #1DB954; }
+    .spot-thing .controls .shuffleInactive {
+      opacity: .7;
+      z-index: 10;
+      color: #FFFFFF; }
+      .spot-thing .controls .shuffleInactive:hover {
+        opacity: 1; }
